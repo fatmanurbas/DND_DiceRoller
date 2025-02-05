@@ -1,146 +1,283 @@
 <html>
-  <head>
-    <link
-      href="https://fonts.googleapis.com/css?family=Irish Grover"
-      rel="stylesheet"
-    />
-    <style>
-      body {
-        background-color: #b47979;
-        font-family: "Irish Grover";
-        font-size: 14px;
-      }
+  <link
+    href="https://fonts.googleapis.com/css?family=Irish Grover"
+    rel="stylesheet"
+  />
+  <style>
+    body {
+      background-color: #b47979;
+      font-family: "Irish Grover";
+      font-size: 14px;
+      overflow: hidden;
+      height: 100%;
+      width: 100%;
+    }
 
-      #player1_rect {
-        width: 300px;
-        height: 200px;
-        border-radius: 0px 0px 12px 0px;
-        top: 0;
-        left: 0;
-        position: absolute;
-        background: #cdb8b8;
-        display: flex;
-      }
+    #player1_rect {
+      width: 300px;
+      height: 200px;
+      border-radius: 0px 0px 12px 0px;
+      top: 0;
+      left: 0;
+      position: absolute;
+      background: #cdb8b8;
+      display: flex;
+    }
 
-      #player1_rect button {
-        position: absolute;
-        top: 40%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background: transparent;
-        border: none;
-        cursor: pointer;
-        width: 125px;
-        height: 125px;
-      }
-      #player1_rect .bottom-row {
-        display: flex;
-        justify-content: space-between;
-        width: 100%;
-        position: absolute;
-        height: 30%;
-        bottom: 0px;
-      }
-      #player2_rect {
-        width: 300px;
-        height: 200px;
-        border-radius: 0px 0px 0px 12px;
-        top: 0;
-        right: 0;
-        position: absolute;
-        background: #8dc1d9;
-      }
+    #player1_rect button {
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      width: 125px;
+      height: 125px;
+    }
+    #player1_rect .bottom-row {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      position: absolute;
+      height: 30%;
+      bottom: 0px;
+    }
+    #player2_rect {
+      width: 300px;
+      height: 200px;
+      border-radius: 0px 0px 0px 12px;
+      top: 0;
+      right: 0;
+      position: absolute;
+      background: #8dc1d9;
+    }
 
-      #player2_rect button {
-        position: absolute;
-        top: 40%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background: transparent;
-        border: none;
-        cursor: pointer;
-        width: 125px;
-        height: 125px;
-      }
-      #player2_rect .bottom-row {
-        display: flex;
-        justify-content: space-between;
-        width: 100%;
-        position: absolute;
-        height: 30%;
-        bottom: 0px;
-      }
-      #player3_rect {
-        width: 300px;
-        height: 200px;
-        border-radius: 0px 12px 0px 0px;
-        bottom: 0;
-        left: 0;
-        position: absolute;
-        background: #96c2b2;
-      }
+    #player2_rect button {
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      width: 125px;
+      height: 125px;
+    }
+    #player2_rect .bottom-row {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      position: absolute;
+      height: 30%;
+      bottom: 0px;
+    }
+    #player3_rect {
+      width: 300px;
+      height: 200px;
+      border-radius: 0px 12px 0px 0px;
+      bottom: 0;
+      left: 0;
+      position: absolute;
+      background: #96c2b2;
+    }
 
-      #player3_rect button {
-        position: absolute;
-        top: 60%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background: transparent;
-        border: none;
-        cursor: pointer;
-        width: 125px;
-        height: 125px;
-      }
-      #player3_rect .bottom-row {
-        display: flex;
-        justify-content: space-between;
-        width: 100%;
-        position: absolute;
-        height: 30%;
-        top: 0px;
-      }
+    #player3_rect button {
+      position: absolute;
+      top: 60%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      width: 125px;
+      height: 125px;
+    }
+    #player3_rect .bottom-row {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      position: absolute;
+      height: 30%;
+      top: 0px;
+    }
 
-      #player4_rect {
-        width: 300px;
-        height: 200px;
-        border-radius: 12px 0px 0px 0px;
-        bottom: 0;
-        right: 0;
-        position: absolute;
-        background: #94b479;
-      }
+    #player4_rect {
+      width: 300px;
+      height: 200px;
+      border-radius: 12px 0px 0px 0px;
+      bottom: 0;
+      right: 0;
+      position: absolute;
+      background: #94b479;
+    }
 
-      #player4_rect button {
-        position: absolute;
-        top: 60%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background: transparent;
-        border: none;
-        cursor: pointer;
-        width: 125px;
-        height: 125px;
-      }
-      #player4_rect .bottom-row {
-        display: flex;
-        justify-content: space-between;
-        width: 100%;
-        position: absolute;
-        height: 30%;
-        top: 0px;
-      }
+    #player4_rect button {
+      position: absolute;
+      top: 60%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      width: 125px;
+      height: 125px;
+    }
+    #player4_rect .bottom-row {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      position: absolute;
+      height: 30%;
+      top: 0px;
+    }
 
-      #masters_rect {
-        width: 300px;
-        height: 200px;
-        border-radius: 52px;
-        top: 35%;
-        left: 40%;
-        position: absolute;
-        background: #9e79b4;
-      }
-    </style>
-  </head>
+    #masters_rect {
+      width: 300px;
+      height: 200px;
+      border-radius: 52px;
+      top: 35%;
+      left: 40%;
+      position: absolute;
+      background: #9e79b4;
+    }
+
+    #modal.modal-overlay {
+      display: flex;
+      position: relative;
+      width: 100%;
+      height: 100%;
+      z-index: 999;
+    }
+
+    .modal-content {
+      background-color: #b47979;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 100%;
+    }
+
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  </style>
+  <div class="modal-overlay" id="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <p
+        style="
+          display: flex;
+          justify-content: center;
+          font-size: 40px;
+          color: #f9e900;
+          font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+          text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+        "
+      >
+        CHOOSE YOUR POSITION
+      </p>
+      <button
+        type="button"
+        onclick="selectPerson(1)"
+        style="
+          width: 20%;
+          height: 20%;
+          color: #f9e900;
+          background-color: #8dc1d9;
+          font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+          font-size: 40px;
+          text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+          position: absolute;
+          top: 25%;
+          left: 10%;
+        "
+      >
+        Player 1
+      </button>
+      <button
+        type="button"
+        onclick="selectPerson(2)"
+        style="
+          width: 20%;
+          height: 20%;
+          color: #f9e900;
+          background-color: #8dc1d9;
+          font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+          font-size: 40px;
+          position: absolute;
+          top: 50%;
+          left: 10%;
+        "
+      >
+        Player 2
+      </button>
+
+      <button
+        type="button"
+        onclick="selectPerson(3)"
+        style="
+          width: 20%;
+          height: 20%;
+          color: #f9e900;
+          background-color: #8dc1d9;
+          font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+          font-size: 40px;
+          text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+          position: absolute;
+          top: 25%;
+          left: 60%;
+        "
+      >
+        Player 3
+      </button>
+      <button
+        type="button"
+        onclick="selectPerson(4)"
+        style="
+          width: 20%;
+          height: 20%;
+          color: #f9e900;
+          background-color: #8dc1d9;
+          font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+          font-size: 40px;
+          text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+          position: absolute;
+          top: 50%;
+          left: 60%;
+        "
+      >
+        Player 4
+      </button>
+      <button
+        type="button"
+        onclick="selectPerson(5)"
+        style="
+          width: 20%;
+          height: 20%;
+          font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+          font-size: 40px;
+          color: #8dc1d9;
+          background-color: #f9e900;
+          text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+          position: absolute;
+          top: 35%;
+          left: 36%;
+        "
+      >
+        Ganbu
+      </button>
+    </div>
+  </div>
   <body>
     <div id="player1_rect">
       <button type="button" onclick="randomGenerate(1)">
@@ -245,20 +382,40 @@
     </div>
 
     <script>
+      var selectedP = 0;
+      document.addEventListener("DOMContentLoaded", function () {
+        openModal();
+      });
+      function openModal() {
+        var modal = document.getElementById("modal");
+        modal.style.display = "flex";
+      }
+      function closeModal() {
+        var modal = document.getElementById("modal");
+        modal.style.display = "none";
+      }
+      function selectPerson(selected) {
+        selectedP = selected;
+        closeModal();
+      }
       function randomGenerate(selectedPerson) {
         //Kullanılan randomize fonksiyon : Math.floor(Math.random() * (max - min + 1) + min)
         switch (selectedPerson) {
           case 1:
-            score1.textContent = Math.floor(Math.random() * 16 + 1);
+            if (selectedP == 1)
+              score1.textContent = Math.floor(Math.random() * 16 + 1);
             break;
           case 2:
-            score2.textContent = Math.floor(Math.random() * 16 + 1);
+            if (selectedP == 2)
+              score2.textContent = Math.floor(Math.random() * 16 + 1);
             break;
           case 3:
-            score3.textContent = Math.floor(Math.random() * 16 + 1);
+            if (selectedP == 3)
+              score3.textContent = Math.floor(Math.random() * 16 + 1);
             break;
           case 4:
-            score4.textContent = Math.floor(Math.random() * 16 + 1);
+            if (selectedP == 4)
+              score4.textContent = Math.floor(Math.random() * 16 + 1);
             break;
         }
       }
