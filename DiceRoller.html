@@ -24,7 +24,7 @@
 
       #player1_rect button {
         position: absolute;
-        top: 50%;
+        top: 40%;
         left: 50%;
         transform: translate(-50%, -50%);
         background: transparent;
@@ -53,7 +53,7 @@
 
       #player2_rect button {
         position: absolute;
-        top: 50%;
+        top: 40%;
         left: 50%;
         transform: translate(-50%, -50%);
         background: transparent;
@@ -82,7 +82,7 @@
 
       #player3_rect button {
         position: absolute;
-        top: 50%;
+        top: 60%;
         left: 50%;
         transform: translate(-50%, -50%);
         background: transparent;
@@ -112,7 +112,7 @@
 
       #player4_rect button {
         position: absolute;
-        top: 50%;
+        top: 60%;
         left: 50%;
         transform: translate(-50%, -50%);
         background: transparent;
@@ -143,7 +143,7 @@
   </head>
   <body>
     <div id="player1_rect">
-      <button type="button" onclick="alert('Image Button clicked!')">
+      <button type="button" onclick="randomGenerate(1)">
         <img
           src="https://github.com/fatmanurbas/DND_DiceRoller/blob/main/dnd_dice.png?raw=true"
           alt="Roll the Dice"
@@ -151,13 +151,18 @@
         />
       </button>
       <div class="bottom-row">
-        <h1 id="player1" style="position: absolute; left: 10">Player 1</h1>
+        <h1
+          id="player1"
+          style="position: absolute; font-weight: lighter; left: 10"
+        >
+          Player 1
+        </h1>
         <h2 id="score1" style="position: absolute; right: 10; top: 10">X</h2>
       </div>
     </div>
 
     <div id="player2_rect">
-      <button type="button" onclick="alert('Image Button clicked!')">
+      <button type="button" onclick="randomGenerate(2)">
         <img
           src="https://github.com/fatmanurbas/DND_DiceRoller/blob/main/dnd_dice.png?raw=true"
           alt="Roll the Dice"
@@ -166,16 +171,26 @@
       </button>
       <div class="bottom-row">
         <h2 id="score2" style="position: absolute; right: 10; top: 10">X</h2>
-        <h1 id="player2" style="position: absolute; left: 10">Player 2</h1>
+        <h1
+          id="player2"
+          style="position: absolute; font-weight: lighter; left: 10"
+        >
+          Player 2
+        </h1>
       </div>
     </div>
 
     <div id="player3_rect">
       <div class="bottom-row">
-        <h1 id="player3" style="position: absolute; left: 10">Player 3</h1>
+        <h1
+          id="player3"
+          style="position: absolute; font-weight: lighter; left: 10"
+        >
+          Player 3
+        </h1>
         <h2 id="score3" style="position: absolute; right: 10">X</h2>
       </div>
-      <button type="button" onclick="alert('Image Button clicked!')">
+      <button type="button" onclick="randomGenerate(3)">
         <img
           src="https://github.com/fatmanurbas/DND_DiceRoller/blob/main/dnd_dice.png?raw=true"
           alt="Roll the Dice"
@@ -187,9 +202,14 @@
     <div id="player4_rect">
       <div class="bottom-row">
         <h2 id="score4" style="position: absolute; right: 10; top: 10">X</h2>
-        <h1 id="player4" style="position: absolute; left: 10">Player 4</h1>
+        <h1
+          id="player4"
+          style="position: absolute; font-weight: lighter; left: 10"
+        >
+          Player 4
+        </h1>
       </div>
-      <button type="button" onclick="alert('Image Button clicked!')">
+      <button type="button" onclick="randomGenerate(4)">
         <img
           src="https://github.com/fatmanurbas/DND_DiceRoller/blob/main/dnd_dice.png?raw=true"
           alt="Roll the Dice"
@@ -199,7 +219,17 @@
     </div>
 
     <div id="masters_rect">
-      <h1 id="master" style="position: absolute; left: 35%">Ganbu</h1>
+      <h1
+        id="master"
+        style="
+          position: absolute;
+          left: 35%;
+          color: white;
+          font-weight: lighter;
+        "
+      >
+        Ganbu
+      </h1>
       <img
         src="https://github.com/fatmanurbas/DND_DiceRoller/blob/main/transparent_dice.png?raw=true"
         alt="Masters Dice"
@@ -213,5 +243,25 @@
         "
       />
     </div>
+
+    <script>
+      function randomGenerate(selectedPerson) {
+        //Kullanılan randomize fonksiyon : Math.floor(Math.random() * (max - min + 1) + min)
+        switch (selectedPerson) {
+          case 1:
+            score1.textContent = Math.floor(Math.random() * 16 + 1);
+            break;
+          case 2:
+            score2.textContent = Math.floor(Math.random() * 16 + 1);
+            break;
+          case 3:
+            score3.textContent = Math.floor(Math.random() * 16 + 1);
+            break;
+          case 4:
+            score4.textContent = Math.floor(Math.random() * 16 + 1);
+            break;
+        }
+      }
+    </script>
   </body>
 </html>
