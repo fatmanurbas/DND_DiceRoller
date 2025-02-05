@@ -1,0 +1,217 @@
+<html>
+  <head>
+    <link
+      href="https://fonts.googleapis.com/css?family=Irish Grover"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background-color: #b47979;
+        font-family: "Irish Grover";
+        font-size: 14px;
+      }
+
+      #player1_rect {
+        width: 300px;
+        height: 200px;
+        border-radius: 0px 0px 12px 0px;
+        top: 0;
+        left: 0;
+        position: absolute;
+        background: #cdb8b8;
+        display: flex;
+      }
+
+      #player1_rect button {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        width: 125px;
+        height: 125px;
+      }
+      #player1_rect .bottom-row {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        position: absolute;
+        height: 30%;
+        bottom: 0px;
+      }
+      #player2_rect {
+        width: 300px;
+        height: 200px;
+        border-radius: 0px 0px 0px 12px;
+        top: 0;
+        right: 0;
+        position: absolute;
+        background: #8dc1d9;
+      }
+
+      #player2_rect button {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        width: 125px;
+        height: 125px;
+      }
+      #player2_rect .bottom-row {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        position: absolute;
+        height: 30%;
+        bottom: 0px;
+      }
+      #player3_rect {
+        width: 300px;
+        height: 200px;
+        border-radius: 0px 12px 0px 0px;
+        bottom: 0;
+        left: 0;
+        position: absolute;
+        background: #96c2b2;
+      }
+
+      #player3_rect button {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        width: 125px;
+        height: 125px;
+      }
+      #player3_rect .bottom-row {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        position: absolute;
+        height: 30%;
+        top: 0px;
+      }
+
+      #player4_rect {
+        width: 300px;
+        height: 200px;
+        border-radius: 12px 0px 0px 0px;
+        bottom: 0;
+        right: 0;
+        position: absolute;
+        background: #94b479;
+      }
+
+      #player4_rect button {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        width: 125px;
+        height: 125px;
+      }
+      #player4_rect .bottom-row {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        position: absolute;
+        height: 30%;
+        top: 0px;
+      }
+
+      #masters_rect {
+        width: 300px;
+        height: 200px;
+        border-radius: 52px;
+        top: 35%;
+        left: 40%;
+        position: absolute;
+        background: #9e79b4;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="player1_rect">
+      <button type="button" onclick="alert('Image Button clicked!')">
+        <img
+          src="https://github.com/fatmanurbas/DND_DiceRoller/blob/main/dnd_dice.png?raw=true"
+          alt="Roll the Dice"
+          style="width: 125px; height: 125px"
+        />
+      </button>
+      <div class="bottom-row">
+        <h1 id="player1" style="position: absolute; left: 10">Player 1</h1>
+        <h2 id="score1" style="position: absolute; right: 10; top: 10">X</h2>
+      </div>
+    </div>
+
+    <div id="player2_rect">
+      <button type="button" onclick="alert('Image Button clicked!')">
+        <img
+          src="https://github.com/fatmanurbas/DND_DiceRoller/blob/main/dnd_dice.png?raw=true"
+          alt="Roll the Dice"
+          style="width: 125px; height: 125px"
+        />
+      </button>
+      <div class="bottom-row">
+        <h2 id="score2" style="position: absolute; right: 10; top: 10">X</h2>
+        <h1 id="player2" style="position: absolute; left: 10">Player 2</h1>
+      </div>
+    </div>
+
+    <div id="player3_rect">
+      <div class="bottom-row">
+        <h1 id="player3" style="position: absolute; left: 10">Player 3</h1>
+        <h2 id="score3" style="position: absolute; right: 10">X</h2>
+      </div>
+      <button type="button" onclick="alert('Image Button clicked!')">
+        <img
+          src="https://github.com/fatmanurbas/DND_DiceRoller/blob/main/dnd_dice.png?raw=true"
+          alt="Roll the Dice"
+          style="width: 125px; height: 125px"
+        />
+      </button>
+    </div>
+
+    <div id="player4_rect">
+      <div class="bottom-row">
+        <h2 id="score4" style="position: absolute; right: 10; top: 10">X</h2>
+        <h1 id="player4" style="position: absolute; left: 10">Player 4</h1>
+      </div>
+      <button type="button" onclick="alert('Image Button clicked!')">
+        <img
+          src="https://github.com/fatmanurbas/DND_DiceRoller/blob/main/dnd_dice.png?raw=true"
+          alt="Roll the Dice"
+          style="width: 125px; height: 125px"
+        />
+      </button>
+    </div>
+
+    <div id="masters_rect">
+      <h1 id="master" style="position: absolute; left: 35%">Ganbu</h1>
+      <img
+        src="https://github.com/fatmanurbas/DND_DiceRoller/blob/main/transparent_dice.png?raw=true"
+        alt="Masters Dice"
+        style="
+          width: 100px;
+          height: 100px;
+          position: absolute;
+          top: 60%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        "
+      />
+    </div>
+  </body>
+</html>
