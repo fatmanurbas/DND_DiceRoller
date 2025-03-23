@@ -1,0 +1,143 @@
+body {
+    background-color: #b47979;
+    font-family: "Irish Grover";
+    font-size: 14px;
+    overflow: hidden;
+    height: auto;
+    width: 100%;
+}
+
+.player_rect {
+    width: 300px;
+    height: 200px;
+    position: absolute; 
+}
+
+#masters_rect {
+    border-radius: 52px;
+    top: 35%;
+    left: 40%;
+    background: #9E79B4;
+}
+
+#player1_rect {
+    border-radius: 0px 0px 12px 0px;
+    top: 0;
+    left: 0;
+    background: #CDB8B8;
+    display: flex;
+}
+
+#player2_rect {
+    border-radius: 0px 0px 0px 12px;
+    top: 0;
+    right: 0;
+    background: #8DC1D9;
+}
+
+#player3_rect {
+    border-radius: 0px 12px 0px 0px;
+    bottom: 0;
+    left: 0;
+    background: #96C2B2;
+}
+
+#player4_rect {
+    border-radius: 12px 0px 0px 0px;
+    bottom: 0;
+    right: 0;
+    background: #94B479;
+}
+
+.player_button { /*button class buna evrilecek*/
+    position: absolute;
+    transform: translate(-50%, -50%);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    width: 125px;
+    height: 125px;
+}
+
+#masters_rect button {
+    top: 50%;
+    left: 45%;
+}
+
+#player1_rect button {
+    top: 40%;
+    left: 50%;
+}
+
+#player2_rect button {
+    top: 40%;
+    left: 50%;
+}
+
+#player3_rect button {
+    top: 60%;
+    left: 50%;
+}
+
+#player4_rect button {
+    top: 60%;
+    left: 50%;
+}
+
+.bottom-row { /*her rectangle'da aynı olduğu için spesifik id'li yazıma ihtiyaç yok*/
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    position: absolute;
+    height: 30%;
+    bottom: 0px;
+}
+
+#player1_rect .bottom-row {
+}
+
+#player2_rect .bottom-row {
+}
+
+#player3_rect .bottom-row {
+}
+
+#player4_rect .bottom-row {
+}
+
+#choose {
+    display: flex;
+    justify-content: center;
+    font-size: 40px;
+    color: #F9E900;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+#modal .modal-overlay {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+}
+
+.modal-content {
+    background-color: #b47979;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 100%;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover, .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
