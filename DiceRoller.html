@@ -1,38 +1,15 @@
 <html>
+  <head>
+    <title>
+        Isekai D&D
+    </title>
 
-<head>
-
-  <title>
-      Isekai D&D
-  </title>
-
-  <link href="https://fonts.googleapis.com/css?family=Irish Grover" rel="stylesheet"/>
-  
+    <link href="https://fonts.googleapis.com/css?family=Irish Grover" rel="stylesheet"/>
+    <link rel="script" href="DiceRoller_js.js">
+    <link rel="stylesheet" href="DiceRoller_Css.css">
 </head>
   
 <style>
-
-  body {
-
-    background-color: #b47979;
-    font-family: "Irish Grover";
-    font-size: 14px;
-    overflow: hidden;
-    height: 100%;
-    width: 100%;
-  }
-
-  #player1_rect {
-  
-    width: 300px;
-    height: 200px;
-    border-radius: 0px 0px 12px 0px;
-    top: 0;
-    left: 0;
-    position: absolute;
-    background: #cdb8b8;
-    display: flex;
-  }
 
   #player1_rect button {
 
@@ -168,228 +145,78 @@
       width: 125px;
       height: 125px;
     }
-
-    #choose {
-
-      display: flex;
-      justify-content: center;
-      font-size: 40px;
-      color: #f9e900;
-      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-    }
-
-    #modal.modal-overlay {
-      display: flex;
-      position: relative;
-      width: 100%;
-      height: 100%;
-      z-index: 999;
-    }
-
-    .modal-content {
-      background-color: #b47979;
-      padding: 20px;
-      border: 1px solid #888;
-      width: 100%;
-    }
-
-    .close {
-      color: #aaa;
-      float: right;
-      font-size: 28px;
-      font-weight: bold;
-    }
-
-    .close:hover,
-    .close:focus {
-      color: black;
-      text-decoration: none;
-      cursor: pointer;
-    }
   </style>
 
-  <div class="modal-overlay" id="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal()">&times;</span>
-      <p id="choose">
-        CHOOSE YOUR POSITION
-      </p>
+    <div class="modal-overlay" id="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            
+            <p id="choose">CHOOSE YOUR POSITION</p>
 
-      <button type="button" onclick="selectPerson(1)" style="
-          width: 20%;
-          height: 20%;
-          color: #f9e900;
-          background-color: #8dc1d9;
-          font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-          font-size: 40px;
-          text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-          position: absolute;
-          top: 25%;
-          left: 10%;">
-        Player 1
-      </button>
-      
-      <button
-        type="button"
-        onclick="selectPerson(2)"
-        style="
-          width: 20%;
-          height: 20%;
-          color: #f9e900;
-          background-color: #8dc1d9;
-          font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-          font-size: 40px;
-          text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-          position: absolute;
-          top: 50%;
-          left: 10%;
-        "
-      >
-        Player 2
-      </button>
+            <button type="button" class="modal-button" onclick="selectPerson(1)" style="top: 25%; left: 10%;">Player 1</button>
+            <button type="button" class="modal-button" onclick="selectPerson(2)" style="top: 50%; left: 10%;">Player 2</button>
+            <button type="button" class="modal-button" onclick="selectPerson(3)" style="top: 25%; left: 60%;">Player 3</button>
+            <button type="button" class="modal-button" onclick="selectPerson(4)" style="top: 50%; left: 60%;">Player 4</button>
+            <button type="button" class="modal-button" onclick="selectPerson(5)" style="top: 35%; left: 36%;">Ganbu</button>
 
-      <button
-        type="button"
-        onclick="selectPerson(3)"
-        style="
-          width: 20%;
-          height: 20%;
-          color: #f9e900;
-          background-color: #8dc1d9;
-          font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-          font-size: 40px;
-          text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-          position: absolute;
-          top: 25%;
-          left: 60%;
-        "
-      >
-        Player 3
-      </button>
-      <button
-        type="button"
-        onclick="selectPerson(4)"
-        style="
-          width: 20%;
-          height: 20%;
-          color: #f9e900;
-          background-color: #8dc1d9;
-          font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-          font-size: 40px;
-          text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-          position: absolute;
-          top: 50%;
-          left: 60%;
-        "
-      >
-        Player 4
-      </button>
-      <button
-        type="button"
-        onclick="selectPerson(5)"
-        style="
-          width: 20%;
-          height: 20%;
-          font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-          font-size: 40px;
-          color: #8dc1d9;
-          background-color: #f9e900;
-          text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-          position: absolute;
-          top: 35%;
-          left: 36%;
-        "
-      >
-        Ganbu
-      </button>
+        </div>
     </div>
-  </div>
 
   <body>
 
-    <div id="player1_rect">
+    <div id="player1_rect" class="player_rect">
 
-      <button type="button" onclick="randomGenerate(1)">
-        <img src="https://github.com/fatmanurbas/DND_DiceRoller/blob/main/dnd_dice.png?raw=true" style="width: 125px; height: 125px"/>
-      </button>
+      <button type="button" onclick="randomGenerate(1)"><img src="dnd_dice.png" class="player_button"/></button>
 
       <div class="bottom-row">
-        <h1 id="player1" style="position: absolute; font-weight: lighter; left: 10">
-          Player 1
-        </h1>
-
+        <h1 id="player1" style="position: absolute; font-weight: lighter; left: 10">Player 1</h1>
         <h2 id="score1" style="position: absolute; right: 20; bottom: 2; font-size: 300%;">X</h2>
-
       </div>
+
     </div>
 
-    <div id="player2_rect">
+    <div id="player2_rect" class="player_rect">
 
-      <button type="button" onclick="randomGenerate(2)">
-        <img src="https://github.com/fatmanurbas/DND_DiceRoller/blob/main/dnd_dice.png?raw=true" style="width: 125px; height: 125px"/>
-      </button>
+      <button type="button" onclick="randomGenerate(2)"><img src="dnd_dice.png" class="player_button"/></button>
 
       <div class="bottom-row">
-
-        <h1 id="player2" style="position: absolute; font-weight: lighter; left: 10">
-          Player 2
-        </h1>
-
+        <h1 id="player2" style="position: absolute; font-weight: lighter; left: 10">Player 2</h1>
         <h2 id="score2" style="position: absolute; right: 10; bottom: 2; font-size: 300%;">X</h2>
-
       </div>
+
     </div>
 
-    <div id="player3_rect">
+    <div id="player3_rect" class="player_rect">
 
-      <button type="button" onclick="randomGenerate(3)">
-        <img src="https://github.com/fatmanurbas/DND_DiceRoller/blob/main/dnd_dice.png?raw=true" style="width: 125px; height: 125px"/>
-      </button>
+      <button type="button" onclick="randomGenerate(3)"><img src="dnd_dice.png" class="player_button"/></button>
 
       <div class="bottom-row">
-
-        <h1 id="player3" style="position: absolute; font-weight: lighter; left: 10">
-          Player 3
-        </h1>
-
+        <h1 id="player3" style="position: absolute; font-weight: lighter; left: 10">Player 3</h1>
         <h2 id="score3" style="position: absolute; right: 15; font-size: 300%;">X</h2>
-
       </div>
+
     </div>
 
-    <div id="player4_rect">
+    <div id="player4_rect" class="player_rect">
 
-      <button type="button" onclick="randomGenerate(4)">
-        <img src="https://github.com/fatmanurbas/DND_DiceRoller/blob/main/dnd_dice.png?raw=true" style="width: 125px; height: 125px"/>
-      </button>
+      <button type="button" onclick="randomGenerate(4)"><img src="dnd_dice.png" class="player_button"/></button>
 
       <div class="bottom-row">
-
-        <h1 id="player4" style="position: absolute; font-weight: lighter; left: 10">
-          Player 4
-        </h1>
-
+        <h1 id="player4" style="position: absolute; font-weight: lighter; left: 10">Player 4</h1>
         <h2 id="score4" style="position: absolute; right: 10; top: 10; font-size: 300%;">X</h2>
-
       </div>
+
     </div>
 
-    <div id="masters_rect">
+    <div id="masters_rect" class="player_rect">
 
-      <button type="button" onclick="randomGenerate(5)">
-        <img src="https://github.com/fatmanurbas/DND_DiceRoller/blob/main/dnd_dice.png?raw=true" style="width: 125px; height: 125px"/>
-      </button>
+      <button type="button" onclick="randomGenerate(5)"><img src="dnd_dice.png" class="player_button"/></button>
 
       <div class="bottom-row">
-        
-        <h1 id="player5" style="position: absolute; font-weight: lighter; left: 100">
-          Ganbu 
-        </h1>
-
+        <h1 id="player5" style="position: absolute; font-weight: lighter; left: 100">Ganbu </h1>
         <h2 id="score5" style="position: absolute; right: 10; top: 40; font-size: 300%;">X</h2>
-
       </div>
+
     </div>
 
     <script>
