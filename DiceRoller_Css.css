@@ -43,6 +43,10 @@ body {
     position: absolute;
 }
 
+.modal-button:hover {
+    cursor: pointer;
+}
+
 .close {
     color: #aaa;
     float: right;
@@ -57,6 +61,11 @@ body {
 }
 
 /*ZAR EKRANI CSS*/
+
+.dice {
+    width: 125px;
+    height: 125px;
+}
 
 .player_rect {
     width: 300px;
@@ -100,42 +109,40 @@ body {
     background: #94B479;
 }
 
-.player_button { /*button class buna evrilecek*/
+.player_button { 
     position: absolute;
     transform: translate(-50%, -50%);
     background: transparent;
     border: none;
     cursor: pointer;
-    width: 125px;
-    height: 125px;
 }
 
-#masters_rect button {
+#masters_rect .player_button {
     top: 50%;
     left: 45%;
 }
 
-#player1_rect button {
+#player1_rect .player_button {
     top: 40%;
     left: 50%;
 }
 
-#player2_rect button {
+#player2_rect .player_button {
     top: 40%;
     left: 50%;
 }
 
-#player3_rect button {
+#player3_rect .player_button {
     top: 60%;
     left: 50%;
 }
 
-#player4_rect button {
+#player4_rect .player_button {
     top: 60%;
     left: 50%;
 }
 
-.bottom-row { /*her rectangle'da aynı olduğu için spesifik id'li yazıma ihtiyaç yok*/
+.player_rect .bottom-row12 {
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -144,51 +151,43 @@ body {
     bottom: 0px;
 }
 
-#player1_rect .bottom-row {
-}
-
-#player2_rect .bottom-row {
-}
-
-#player3_rect .bottom-row {
-}
-
-#player4_rect .bottom-row {
-}
-
-#choose {
+.player_rect .bottom-row34 {
     display: flex;
-    justify-content: center;
-    font-size: 40px;
-    color: #F9E900;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-}
-
-#modal .modal-overlay {
-    display: flex;
-    position: relative;
+    justify-content: space-between;
     width: 100%;
-    height: 100%;
-    z-index: 999;
+    position: absolute;
+    height: 30%;
+    top: 0px;
 }
 
-.modal-content {
-    background-color: #b47979;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 100%;
+.player {
+    position: absolute; 
+    font-weight: lighter; 
+    left: 10
 }
 
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
+.score12 {
+    position: absolute; 
+    right: 20; 
+    bottom: 2; 
+    font-size: 300%;
 }
 
-.close:hover, .close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
+.score34 {
+    position: absolute; 
+    right: 15; 
+    font-size: 300%;
+}
+
+#master {
+    position: absolute; 
+    font-weight: lighter; 
+    left: 100;
+}
+
+#score5 {
+    position: absolute; 
+    right: 20; 
+    top: 40; 
+    font-size: 300%;
 }

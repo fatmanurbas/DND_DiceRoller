@@ -1,47 +1,44 @@
-//ÇALIŞMIYO ŞU AN
-     
-      document.addEventListener("DOMContentLoaded", function () {
-        openModal();
-      });
+// Global variable to track selected person
+let selectedP = 0;
 
-      function openModal() {
-        var modal = document.getElementById("modal");
+// Event listener to open modal when DOM is fully loaded
+document.addEventListener("DOMContentLoaded", function () {
+    openModal();
+});
+
+// Function to open the modal
+function openModal() {
+    const modal = document.getElementById("modal");
+    if (modal) {
         modal.style.display = "flex";
-      }
+    }
+}
 
-      function closeModal() {
-        var modal = document.getElementById("modal");
+// Function to close the modal
+function closeModal() {
+    const modal = document.getElementById("modal");
+    if (modal) {
         modal.style.display = "none";
-      }
+    }
+}
 
-      function selectPerson(selected) {
-        selectedP = selected;
-        closeModal();
-      }
-      var selectedP = 0;
-      function randomGenerate(selectedPerson) {
-        //Kullanılan randomize fonksiyon : Math.floor(Math.random() * (max - min + 1) + min)
+// Function to select a person and close modal
+function selectPerson(selected) {
+    // Ensure the selected value is a number
+    selectedP = Number(selected);
+    closeModal();
+}
 
-        switch (selectedPerson) {
-          case 1:
-            if (selectedP == 1)
-              score1.textContent = Math.floor(Math.random() * 12 + 1);
-            break;
-          case 2:
-            if (selectedP == 2)
-              score2.textContent = Math.floor(Math.random() * 12 + 1);
-            break;
-          case 3:
-            if (selectedP == 3)
-              score3.textContent = Math.floor(Math.random() * 12 + 1);
-            break;
-          case 4:
-            if (selectedP == 4)
-              score4.textContent = Math.floor(Math.random() * 12 + 1);
-            break;
-          case 5:
-            if (selectedP == 5)
-              score5.textContent = Math.floor(Math.random() * 12 + 1);
-            break;
+// Function to generate a random score for a specific person
+function randomGenerate(selectedPerson) {
+    // Ensure the selected person matches the current selection
+    if (selectedPerson === selectedP) {
+        // Get the score element dynamically based on selected person
+        const scoreElement = document.getElementById(`score${selectedPerson}`);
+        
+        if (scoreElement) {
+            // Generate a random number between 1 and 12
+            scoreElement.textContent = Math.floor(Math.random() * 12 + 1);
         }
-      }
+    }
+}
